@@ -22,3 +22,19 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+if (len(sys.argv) == 1):
+    c = calendar.TextCalendar(calendar.SUNDAY)
+    f = c.formatmonth(datetime.today().year, datetime.today().month)
+    print(f)  
+elif (len(sys.argv) == 2 and int(sys.argv[1]) > 0 and int(sys.argv[1]) < 13):
+    c = calendar.TextCalendar(calendar.SUNDAY)
+    f = c.formatmonth(datetime.today().year, int(sys.argv[1]))
+    print(f)  
+elif (len(sys.argv) == 3):
+    c = calendar.TextCalendar(calendar.SUNDAY)
+    f = c.formatmonth(int(sys.argv[2]), int(sys.argv[1]))
+    print(f)
+else:
+    print(" format should be `14_cal.py month [year]`") 
+    
